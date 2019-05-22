@@ -1,0 +1,25 @@
+{
+  "name": "modular-aws-sdk",
+  "version": "1.0.0",
+  "description": "Create an aws-sdk just for your use-case",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junkern/modular-aws-sdk.git"
+  },
+  "keywords": [
+    "aws-sdk"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Junkern/modular-aws-sdk/issues"
+  },
+  "homepage": "https://github.com/Junkern/modular-aws-sdk#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.1"
+  }
+}
