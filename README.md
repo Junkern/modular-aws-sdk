@@ -18,3 +18,10 @@ Package created with `bash create.sh dynamodb`: `3,6 MB`
 ## Execution
 
 Simply call `bash create.sh SOFTWARE` where `SOFTWARE` is a property from https://github.com/aws/aws-sdk-js/blob/master/apis/metadata.json
+
+## Examples
+
+* [S3](https://www.npmjs.com/package/modular-aws-sdk-s3)
+* [DynamoDB](https://www.npmjs.com/package/modular-aws-sdk-dynamodb)
+* [EC2](https://www.npmjs.com/package/modular-aws-sdk-ec2)
+* [Route53](https://www.npmjs.com/package/modular-aws-sdk-route53)
