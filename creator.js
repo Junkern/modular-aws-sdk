@@ -26,7 +26,6 @@ const run = async () => {
   modifyPackageJson(path.join(__dirname, PATH_TO_AWS_SDK, 'package.json'), path.join(__dirname, NEW_MODULE_FOLDER, 'package.json'), newName, newHomepage)
 
   // copy needed dependencies
-  // await fsExtra.copy(path.join(__dirname, PATH_TO_AWS_SDK, 'package.json'), path.join(__dirname, NEW_MODULE_FOLDER, 'package.json'));
   await fsExtra.copy(path.join(__dirname, PATH_TO_AWS_SDK, 'NOTICE.txt'), path.join(__dirname, NEW_MODULE_FOLDER, 'NOTICE.txt'));
   await fsExtra.copy(path.join(__dirname, PATH_TO_AWS_SDK, 'LICENSE.txt'), path.join(__dirname, NEW_MODULE_FOLDER, 'LICENSE.txt'));
   await fsExtra.copy(path.join(__dirname, PATH_TO_AWS_SDK, 'index.d.ts'), path.join(__dirname, NEW_MODULE_FOLDER, 'index.d.ts'));
@@ -50,6 +49,17 @@ const run = async () => {
   // ec2.d.ts
   const dTsFilePath = `${clientFile.path.slice(0, clientFile.path.length - 2)}d.ts`
   fsExtra.copy(dTsFilePath, path.join(__dirname, NEW_MODULE_FOLDER, 'clients', `${clientFile.service}.d.ts`))
+
+  // lib/config_service_placeholders.d.ts file
+  const configServicePlaceholdersDtsFileContents = `import * as AWS from '../clients/all';
+  export abstract class ConfigurationServicePlaceholders {
+    ${serviceToUse}?: AWS.${uppercaseName}.Types.ClientConfiguration;
+  }
+  export interface ConfigurationServiceApiVersions {
+    ${serviceToUse}?: AWS.${uppercaseName}.Types.apiVersion;
+  }
+  `
+  fs.writeFileSync(path.join(__dirname, NEW_MODULE_FOLDER, 'lib', 'config_service_placeholders.d.ts'), configServicePlaceholdersDtsFileContents)
 
 
   // copy needed files for api folder
