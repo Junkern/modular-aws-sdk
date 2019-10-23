@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Junkern/modular-aws-sdk#readme",
   "dependencies": {
     "fs-extra": "^7.0.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.554.0"
   }
 }

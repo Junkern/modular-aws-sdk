@@ -17,7 +17,19 @@ Package created with `bash create.sh dynamodb`: `3,6 MB`
 
 ## Execution
 
+### For building a version with only one AWS service
+
 Simply call `bash create.sh SOFTWARE` where `SOFTWARE` is a property from https://github.com/aws/aws-sdk-js/blob/master/apis/metadata.json
+
+
+### Building the full SDK containg only the files needed for Node.js
+
+```sh
+npm install
+bash scripts/createPureNodeJsAWSSDK.sh
+# the final sdk will be in the "modular-aws-sdk-pure-node" folder
+```
+
 
 ## Examples
 
