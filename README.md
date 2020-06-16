@@ -1,5 +1,9 @@
 # modular-aws-sdk
 
+----
+AWS has now published the version 3 of its SDK and it is now modularized: https://github.com/aws/aws-sdk-js-v3
+----
+
 A tool to build a smaller aws-sdk with only the things you need for your application.
 
 Currently it is only possible to build a package with one AWS lib (e.g. only `EC2`)
